@@ -34,14 +34,14 @@ if os.listdir(os.getcwd()+'\\in'):
    pass
 else:
    android = message_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Для продолжения закиньте Вашу прошивку в папку in и перезапустите скрипт",
     style=example_style
    ).run()
    exit()
 
 android = radiolist_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Какую версию Android использует Ваша прошивка?",
     values=[
         ("android_11", "Android 11"),
@@ -60,7 +60,7 @@ else:
    exit()
 
 bootanimation = radiolist_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Какую анимацию загрузки использовать?",
     values=[
         ("bootanimation_atv", "Из Android TV"),
@@ -85,7 +85,7 @@ else:
    exit()
    
 screensaver = radiolist_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Какой ScreenSaver использовать?",
     values=[
         ("aerial", "Aerial Dream (как из Apple TV)"),
@@ -110,7 +110,7 @@ else:
    exit()   
    
 start = yes_no_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Начать сборку прошивки?",
     style=example_style
 ).run()
@@ -118,7 +118,7 @@ start = yes_no_dialog(
 if start:
    os.system('_aosp2atv-'+android+'.bat')
    bye = message_dialog(
-    title=HTML('<style fg="white">aosp</style><style fg="grey">2</style><style fg="white">android</style><style fg="green">tv</style>'),
+    title=HTML('<style fg="green">ATV</style><style fg="white">ify</style>'),
     text="Прошивка успешно собрана!",
     style=example_style
    ).run()
