@@ -107,6 +107,19 @@ echo Copy files...
 xcopy /Y /E /S /H /Q "%~dp0\tmp\level1" "%~dp0\level1"
 xcopy /Y /E /S /H /Q "%~dp0\tmp\level2" "%~dp0\level2"
 
+IF EXIST "%~dp0\level2\system\system\preinstall" (
+    rd /s /q level2\system\system\preinstall\Chrome 2> nul
+	rd /s /q level2\system\system\preinstall\com.ghisler.android.TotalCommander_3.20 2> nul
+	rd /s /q level2\system\system\preinstall\com.ghisler.tcplugins.LAN_3.20 2> nul
+	xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\system\system\preinstall"
+) ELSE (
+	IF EXIST "%~dp0\level2\product\preinstall" (
+		rd /s /q level2\product\preinstall\Chrome 2> nul
+		rd /s /q level2\product\preinstall\com.ghisler.android.TotalCommander_3.20 2> nul
+		rd /s /q level2\product\preinstall\com.ghisler.tcplugins.LAN_3.20 2> nul
+		xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\product\preinstall"
+	)
+)
 
 set /p system_size=<"level2\system_size"
 bin\make_ext4fs -s -J -L system -T -1 -S level2\system_file_contexts -C level2\system_fs_config -l %system_size% -a system level1\system.PARTITION level2\system\
