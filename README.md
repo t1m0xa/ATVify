@@ -10,5 +10,5 @@
 6. Получите модифицированную прошивку в папке ```out```
 
 ## Благодарности:
-- CryptoNick (за .bat для Android 11)
-- XVortex (за .bat для Android 11)
+- CryptoNick (за .bat конвертер для Android 11)
+- XVortex (за .bat конвертер для Android 11)
