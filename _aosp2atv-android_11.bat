@@ -98,8 +98,6 @@ IF EXIST "%~dp0\level2\system\system\preinstall" (
 		xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\product\preinstall"
 	)
 )
-pause
-
 echo Editing...
 
 rem ro.sf.lcd_density=320
