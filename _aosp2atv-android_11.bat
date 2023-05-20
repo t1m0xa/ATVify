@@ -85,19 +85,11 @@ echo Copy files...
 xcopy /Y /E /S /H /Q "%~dp0\tmp\level1" "%~dp0\level1"
 xcopy /Y /E /S /H /Q "%~dp0\tmp\level2" "%~dp0\level2"
 
-IF EXIST "%~dp0\level2\system\system\preinstall" (
-    rd /s /q level2\system\system\preinstall\Chrome 2> nul
-	rd /s /q level2\system\system\preinstall\com.ghisler.android.TotalCommander_3.20 2> nul
-	rd /s /q level2\system\system\preinstall\com.ghisler.tcplugins.LAN_3.20 2> nul
-	xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\system\system\preinstall"
-) ELSE (
-	IF EXIST "%~dp0\level2\product\preinstall" (
-		rd /s /q level2\product\preinstall\Chrome 2> nul
-		rd /s /q level2\product\preinstall\com.ghisler.android.TotalCommander_3.20 2> nul
-		rd /s /q level2\product\preinstall\com.ghisler.tcplugins.LAN_3.20 2> nul
-		xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\product\preinstall"
-	)
-)
+rd /s /q level2\product\preinstall\Chrome 2> nul
+rd /s /q level2\product\preinstall\com.ghisler.android.TotalCommander_3.20 2> nul
+rd /s /q level2\product\preinstall\com.ghisler.tcplugins.LAN_3.20 2> nul
+xcopy /Y /E /S /H /Q "%~dp0\_preinstall" "%~dp0\level2\product\preinstall"
+		
 echo Editing...
 
 rem ro.sf.lcd_density=320
